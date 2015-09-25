@@ -2,3 +2,4 @@
 *.iml
 classes
 *.class
+scala/out

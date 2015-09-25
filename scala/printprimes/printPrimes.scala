@@ -1,4 +1,4 @@
-object Hello {
+object PrintPrimes {
 
   def main(args: Array[String]) {
     var msg = "Hello, world!"
@@ -8,7 +8,7 @@ object Hello {
   def time(f : () => Unit) = {
     val t1 = System.currentTimeMillis()
     f()
-    println("Time Taken: " + (System.currentTimeMillis() - t1));
+    println("Time Taken: " + (System.currentTimeMillis() - t1))
   }
 
   def isPrime(x : Int) : Boolean = {
@@ -17,6 +17,6 @@ object Hello {
             return true
         }
     }
-    return false
+    false
   }
 }
