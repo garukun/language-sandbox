@@ -1,12 +1,13 @@
-(ns printPrimes
-  (:require [clojure.core.reducers :as r])
-  (:gen-class))
+(ns printPrimes)
+
+(require '[clojure.core.reducers :as r])
 
 (defn is-prime?
   [number]
-  (not-any?
-    (fn [x] (zero? (rem number x)))
-    (range 2 number)))
+  (loop [x 2]
+    (if (zero? (unchecked-remainder-int number x))
+      (= x number)
+      (recur (inc x)))))
 
 (defn -main
   [& args]
@@ -14,7 +15,6 @@
   (->> 100000
        (range 2)
        vec
-       shuffle
        (r/filter is-prime?)
        r/foldcat
        count
