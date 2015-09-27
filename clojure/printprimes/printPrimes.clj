@@ -20,7 +20,7 @@
 (defn -main
   [& args]
   (println "Hello world!")
-  (time (count (pfilter is-prime? (range 2 100000)))))
+  (println (into [] (pfilter is-prime? (range 2 100000)))))
 
 ; allows `lein exec` to call this like a script
-(-main)
+(time (-main))
