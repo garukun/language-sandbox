@@ -33,6 +33,6 @@ func checkPrime(prime chan<- int, n int) {
 
 func main() {
   start := time.Now()
-  printPrimes(10000)
+  printPrimes(100000)
   fmt.Printf("Time taken: %s\n", time.Since(start))
 }

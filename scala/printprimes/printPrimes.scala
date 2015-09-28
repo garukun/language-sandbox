@@ -2,7 +2,7 @@ object PrintPrimes {
 
   def main(args: Array[String]) {
     var msg = "Hello, world!"
-    time(() => { (1 to 100000).par.filter(isPrime) } )
+    time(() => { println((2 to 100000).par.filter(isPrime)) } )
   }
 
   def time(f : () => Unit) = {
@@ -14,9 +14,9 @@ object PrintPrimes {
   def isPrime(x : Int) : Boolean = {
     for (i <- 2 until x) {
         if ((x % i) == 0) {
-            return true
+            return false
         }
     }
-    false
+    true
   }
 }
